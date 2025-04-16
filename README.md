@@ -12,6 +12,16 @@ El proyecto es una web de un diario y sus notas.
 
   * todavia esta en fase de pruebas.
 
+* auth/login:
+
+  * completado
+
+* auth/register:
+
+  * todavia esta en fase de pruebas.
+
+
+
 ### 2.2. **Requisitos Previos**
 
 Antes de proceder, asegúrate de tener estos programas en el equipo:
@@ -25,6 +35,8 @@ Antes de proceder, asegúrate de tener estos programas en el equipo:
 * CSS: Lenguaje de Hojas de Estilo.
 * HTML: Lenguaje de Marcado de Texto.
 * React: Biblioteca de Facebook y para desarrollar aplicaciones.
+* Redux: Biblioteca de cambio de estado.
+* Firebase: Servicio Backend
 * MUI: Biblioteca de CSS.
 * pnpm, yarn o npm: Gestor de dependencias.
 * GitHub: Sistema de control de versiones.
