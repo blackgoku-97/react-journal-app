@@ -10,7 +10,7 @@ El proyecto es una web de un diario y sus notas.
 
 * Inicio:
 
-  * todavia esta en fase de pruebas.
+  * te registras y logueas todavia esta en fase de pruebas.
 
 * auth/login:
 
@@ -18,7 +18,7 @@ El proyecto es una web de un diario y sus notas.
 
 * auth/register:
 
-  * todavia esta en fase de pruebas.
+  * completado
 
 
 

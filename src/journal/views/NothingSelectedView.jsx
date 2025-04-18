@@ -5,6 +5,7 @@ export const NothingSelectedView = () => {
   return (
     <Box
       sx={{
+        className: "animate__animated animate__fadeIn animate__faster",
         minHeight: "calc(100vh - 110px)",
         backgroundColor: "primary.main",
         borderRadius: 3,
