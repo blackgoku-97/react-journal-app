@@ -10,7 +10,7 @@ El proyecto es una web de un diario y sus notas.
 
 * Inicio:
 
-  * te registras y logueas todavia esta en fase de pruebas.
+  * te registras y logueas todavia esta en fase de pruebas el crud de notas.
 
 * auth/login:
 
@@ -19,8 +19,6 @@ El proyecto es una web de un diario y sus notas.
 * auth/register:
 
   * completado
-
-
 
 ### 2.2. **Requisitos Previos**
 
@@ -36,7 +34,7 @@ Antes de proceder, asegúrate de tener estos programas en el equipo:
 * HTML: Lenguaje de Marcado de Texto.
 * React: Biblioteca de Facebook y para desarrollar aplicaciones.
 * Redux: Biblioteca de cambio de estado.
-* Firebase: Servicio Backend
+* Firebase: Base de Datos y Authentiication
 * MUI: Biblioteca de CSS.
 * pnpm, yarn o npm: Gestor de dependencias.
 * GitHub: Sistema de control de versiones.

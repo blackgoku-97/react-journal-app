@@ -1,8 +1,41 @@
-import { Grid, Button, TextField, Typography } from "@mui/material";
-import { SaveOutlined } from "@mui/icons-material";
-import { ImageGallery } from "../components";
+import { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { SaveOutlined } from '@mui/icons-material';
+import { Button, Grid, TextField, Typography } from '@mui/material';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+
+import { useForm } from '../../hooks';
+import { ImageGallery } from '../components';
+import { setActiveNote, startSaveNote } from '../../store/journal';
 
 export const NoteView = () => {
+
+  const dispatch = useDispatch();
+  const { active:note, messageSaved, isSaving } = useSelector( state => state.journal );
+
+  const { title, body, date, onInputChange, formState } = useForm( note );
+
+  const dateString = useMemo(() => {
+    const newDate = new Date( date );
+    return newDate.toUTCString();
+  }, [ date ]);
+
+  useEffect(() => {
+    dispatch( setActiveNote(formState) );
+  }, [ formState ]);
+
+  useEffect(() => {
+    if ( messageSaved.length > 0 ) {
+      Swal.fire('Nota actualizada', messageSaved, 'success');
+    }
+  }, [ messageSaved ]);
+
+  const onSaveNote = () => {
+    dispatch( startSaveNote() );
+  }
+
   return (
     <Grid
       container
@@ -14,11 +47,16 @@ export const NoteView = () => {
     >
       <Grid>
         <Typography fontSize={39} fontWeight="light">
-          28 de agosto, 2025
+          { dateString }
         </Typography>
       </Grid>
       <Grid>
-        <Button color="primary" sx={{ padding: 2 }}>
+        <Button
+            disabled={ isSaving }
+            onClick={ onSaveNote } 
+            color="primary" 
+            sx={{ padding: 2 }}
+        >
           <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
           Guardar
         </Button>
@@ -31,14 +69,21 @@ export const NoteView = () => {
           placeholder="Ingrese un título"
           label="Título"
           sx={{ width: "100%", border: "none", mb: 1 }}
+          name="title"
+          value={ title }
+          onChange={ onInputChange }
         />
+
         <TextField
           type="text"
           variant="filled"
           multiline
           placeholder="Que sucedió en el día de hoy"
           sx={{ width: "100%" }}
-          minRows={5}
+          minRows={ 5 }
+          name="body"
+          value={ body }
+          onChange={ onInputChange }
         />
       </Grid>
 
