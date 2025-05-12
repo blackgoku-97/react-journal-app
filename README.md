@@ -34,7 +34,8 @@ Antes de proceder, asegúrate de tener estos programas en el equipo:
 * HTML: Lenguaje de Marcado de Texto.
 * React: Biblioteca de Facebook y para desarrollar aplicaciones.
 * Redux: Biblioteca de cambio de estado.
-* Firebase: Base de Datos y Authentiication
+* Firebase: Base de Datos y Authentiication.
+* Cloudinary: Servicio de la nube para subir imagenes.
 * MUI: Biblioteca de CSS.
 * pnpm, yarn o npm: Gestor de dependencias.
 * GitHub: Sistema de control de versiones.
