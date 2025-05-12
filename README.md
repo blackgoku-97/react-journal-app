@@ -10,7 +10,7 @@ El proyecto es una web de un diario y sus notas.
 
 * Inicio:
 
-  * te registras y logueas todavia esta en fase de pruebas el crud de notas.
+  * te registras y logueas esta el crud de notas.
 
 * auth/login:
 
