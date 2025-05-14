@@ -10,8 +10,8 @@ import { useForm } from '../../hooks';
 import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 
 const formData = {
-  email: "harry@google.com",
-  password: "123456",
+  email: "",
+  password: "",
 };
 
 export const LoginPage = () => {
@@ -37,7 +37,7 @@ export const LoginPage = () => {
 
   return (
     <AuthLayout title="Iniciar sesión">
-        <form onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
+      <form onSubmit={onSubmit} className="MuiContainer MuiContainer-maxWidthMd">
         <Box sx={{ mt: 2 }}>
           <TextField
             label="Correo"
@@ -47,6 +47,7 @@ export const LoginPage = () => {
             name="email"
             value={email}
             onChange={onInputChange}
+            className="MuiTextField-root"
           />
         </Box>
         <Box sx={{ mt: 2 }}>
@@ -58,11 +59,12 @@ export const LoginPage = () => {
             name="password"
             value={password}
             onChange={onInputChange}
+            className="MuiTextField-root"
           />
         </Box>
 
         <Box sx={{ mt: 2, display: errorMessage ? "" : "none" }}>
-          <Alert severity="error">{errorMessage}</Alert>
+          <Alert severity="error" className="MuiAlert-root">{errorMessage}</Alert>
         </Box>
 
         <Box
@@ -72,23 +74,26 @@ export const LoginPage = () => {
             mb: 2,
             mt: 1,
           }}
+          className="MuiBox-root"
         >
           <Box sx={{ width: "48%", mr: 1 }}>
             <Button
-              disabled={ isAuthenticating }
+              disabled={isAuthenticating}
               type="submit"
               variant="contained"
               sx={{ width: "100%" }}
+              className="MuiButton-contained"
             >
               Ingresar
             </Button>
           </Box>
           <Box sx={{ width: "48%", ml: 1 }}>
             <Button
-              disabled={ isAuthenticating }
+              disabled={isAuthenticating}
               variant="contained"
               sx={{ width: "100%" }}
-              onClick={ onGoogleSignIn }
+              onClick={onGoogleSignIn}
+              className="MuiButton-contained"
             >
               <Google />
               <Typography sx={{ ml: 1 }}>Google</Typography>
@@ -96,7 +101,7 @@ export const LoginPage = () => {
           </Box>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "end" }}>
-          <Link component={RouterLink} to="/auth/register" color="inherit">
+          <Link component={RouterLink} to="/auth/register" className="MuiLink-root" color="inherit">
             Crear una cuenta
           </Link>
         </Box>
